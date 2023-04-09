@@ -27,15 +27,18 @@ export default function Container() {
 
   const price = parseInt(product.price).toFixed(2);
   const discountPrice = ((price * 12) / 1.25).toFixed(2);
+  const totalCost = isMonthlyBilling ? price : discountPrice;
+
+  const submitHandler = () => {
+    console.log({ product, totalCost });
+  };
 
   return (
     <div className='container'>
       <div className='container-head'>
         <span className='pageviews'>{product.pageviews} pageviews</span>
         <span className='price'>
-          <span className='number'>
-            {isMonthlyBilling ? `$${price}` : `$${discountPrice}`}
-          </span>
+          <span className='number'>${totalCost}</span>
           {isMonthlyBilling ? '/month' : '/year'}
         </span>
         <Slider
@@ -52,7 +55,9 @@ export default function Container() {
           <li>100% data ownership</li>
           <li>Email reports</li>
         </ul>
-        <button name='button'>Start my trial</button>
+        <button name='button' onClick={submitHandler}>
+          Start my trial
+        </button>
       </div>
     </div>
   );
