@@ -1,4 +1,4 @@
-// import './Switch.css';
+import './Switch.css';
 
 export default function Switch(props) {
   return (

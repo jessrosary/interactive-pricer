@@ -30,23 +30,30 @@ export default function Container() {
 
   return (
     <div className='container'>
-      <span className='pageviews'>{product.pageviews} pageviews</span>
-      <span className='price'>${isMonthlyBilling ? price : discountPrice}</span>
-      {isMonthlyBilling ? '/month' : '/year'}
-      <br></br>
-      <Slider
-        value={rangeValue}
-        max={products.length - 1}
-        handleChange={handleRangeChange}
-      />
-      <Switch handleChange={handleIsMonthlyBilling} />
+      <div className='container-head'>
+        <span className='pageviews'>{product.pageviews} pageviews</span>
+        <span className='price'>
+          <span className='number'>
+            {isMonthlyBilling ? `$${price}` : `$${discountPrice}`}
+          </span>
+          {isMonthlyBilling ? '/month' : '/year'}
+        </span>
+        <Slider
+          value={rangeValue}
+          max={products.length - 1}
+          handleChange={handleRangeChange}
+        />
+        <Switch handleChange={handleIsMonthlyBilling} />
+      </div>
       <hr></hr>
-      <ul>
-        <li>Unlimited websites</li>
-        <li>100% data ownership</li>
-        <li>Email reports</li>
-      </ul>
-      <button>Start my trial</button>
+      <div className='container-foot'>
+        <ul>
+          <li>Unlimited websites</li>
+          <li>100% data ownership</li>
+          <li>Email reports</li>
+        </ul>
+        <button name='button'>Start my trial</button>
+      </div>
     </div>
   );
 }
