@@ -19,27 +19,25 @@ export default function Container() {
     setRangeValue(newValue);
   };
 
-  const updateTrackColor = () => {
-    const percentage = (rangeValue + 1) * 100;
-    return `linear-gradient(to right, red ${percentage}%, blue ${percentage}%)`;
-  };
-
   const handleIsMonthlyBilling = (event) => {
-    setMonthlyBilling((prevState) => !prevState);
+    setIsMonthlyBilling((prevState) => !prevState);
   };
 
   const product = products[rangeValue];
 
+  const price = parseInt(product.price).toFixed(2);
+  const discountPrice = ((price * 12) / 1.25).toFixed(2);
+
   return (
     <div className='container'>
       <span className='pageviews'>{product.pageviews} pageviews</span>
-      <span className='price'>${product.price}.00</span>/month
+      <span className='price'>${isMonthlyBilling ? price : discountPrice}</span>
+      {isMonthlyBilling ? '/month' : '/year'}
       <br></br>
       <Slider
         value={rangeValue}
         max={products.length - 1}
         handleChange={handleRangeChange}
-        updateTrackColor={updateTrackColor}
       />
       <Switch handleChange={handleIsMonthlyBilling} />
       <hr></hr>

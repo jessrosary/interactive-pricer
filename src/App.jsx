@@ -9,13 +9,6 @@ export default function App() {
         <h2>Sign-up for our 30-day trial. No credit card required.</h2>
       </header>
       <Container />
-      <div className='attribution'>
-        Challenge by{' '}
-        <a href='https://www.frontendmentor.io?ref=challenge' target='_blank'>
-          Frontend Mentor
-        </a>
-        . Coded by <a href='https://github.com/jessrosary/'>Jess Rose</a>.
-      </div>
     </div>
   );
 }

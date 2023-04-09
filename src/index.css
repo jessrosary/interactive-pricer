@@ -39,7 +39,7 @@ h2 {
   border-radius: 5px;
   filter: drop-shadow(2px 2px 5px hsl(223, 50%, 87%));
   align-self: center;
-  padding: 35px 0;
+  padding: 35px;
 }
 
 .pageviews {
@@ -64,10 +64,6 @@ hr {
 
 .discount-flag {
   background-color: hsl(15, 100%, 70%);
-}
-
-#slider {
-  margin: 24px 0;
 }
 
 ul {

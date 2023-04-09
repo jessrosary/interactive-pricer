@@ -1,12 +1,8 @@
 import './Slider.css';
 
 export default function Slider(props) {
-  const percentage = 100 / props.value;
-  const background = `linear-gradient(to right, red ${
-    100 - percentage
-  }%, blue ${percentage}%)`;
-
-  console.log({ background });
+  const percentage = (100 / props.max) * props.value;
+  const background = `linear-gradient(to right, hsl(174, 77%, 80%) ${percentage}%, hsl(224, 65%, 95%) ${percentage}%)`;
 
   return (
     <input
