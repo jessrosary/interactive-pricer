@@ -1,6 +1,6 @@
 .switch {
   font-family: inherit;
-  font-size: .8em;
+  font-size: .7em;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
