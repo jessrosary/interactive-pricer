@@ -16,7 +16,8 @@ export default function Switch(props) {
         </label>
       </div>
       <span className='right'>
-        Yearly Billing <span className='discount-flag'>25% discount</span>
+        Yearly Billing <span className='discount-desktop'>25% discount</span>
+        <span className='discount-mobile'>-25%</span>
       </span>
     </div>
   );

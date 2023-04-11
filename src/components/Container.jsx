@@ -41,13 +41,15 @@ export default function Container() {
           <span className='number'>${totalCost}</span>
           {isMonthlyBilling ? '/month' : '/year'}
         </span>
-        <Slider
-          value={rangeValue}
-          max={products.length - 1}
-          handleChange={handleRangeChange}
-        />
-        <Switch handleChange={handleIsMonthlyBilling} />
+        <span className='slider'>
+          <Slider
+            value={rangeValue}
+            max={products.length - 1}
+            handleChange={handleRangeChange}
+          />
+        </span>
       </div>
+      <Switch handleChange={handleIsMonthlyBilling} />
       <hr></hr>
       <div className='container-foot'>
         <ul>

@@ -7,7 +7,6 @@ input[type="range"] {
    width: 100%;
    height: 7px;
    border-radius: 3px;
-   margin: 35px 0 35px 0;
 }
 
 /* Removes default focus */

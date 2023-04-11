@@ -10,9 +10,8 @@ html {
   align-items: center;
   justify-content: center;
   background-image: url('design/images/bg-pattern.svg');
-  background-position: top;
+  background-position: top left;
   background-repeat: no-repeat;
-  background-size: contain;
 }
 
 h1 {
@@ -32,17 +31,23 @@ h2 {
   background-position: center;
   padding: 24px;
   margin: 36px;
+  line-height: 1.5em;
 }
 
 .container {
   background-color: white;
   border-radius: 5px;
   filter: drop-shadow(2px 2px 5px hsl(223, 50%, 87%));
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
 .container-head {
-  margin: 35px 35px 20px 35px;
-  padding-top: 35px;
+  padding: 35px 35px 20px 35px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .pageviews {
@@ -50,31 +55,39 @@ h2 {
   text-transform: uppercase;
   font-size: .8em;
   letter-spacing: 1px;
-  position: relative;
-  float: left;
+  order: 1;
 }
 
 .price {
-  position: relative;
-  float: right;
+  order: 1;
 }
 
 .number {
   color: hsl(227, 35%, 25%);
   font-weight: 800;
-  font-size: 1.8em;
+  font-size: 2em;
+}
+
+.slider {
+  flex-basis: 100%;
+  width: 100%;
+  margin: 35px 15px 10px;
+  order: 2;
 }
 
 hr {
+  width: 100%;
   border: 0;
   height: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  flex-basis: 100%;
 }
 
 .container-foot {
-  padding: 15px 35px 25px 35px;
+  padding: 15px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
@@ -83,18 +96,109 @@ ul {
   text-align: left;
   font-size: .8em;
   list-style-image: url('design/images/icon-check.svg');
+  padding: 15px;
+  margin: auto;
   
 }
 
 button {
   color: white;
+  padding: 10px 35px;
   background-color: hsl(227, 35%, 25%);
   font: inherit;
   border: none;
   font-size: .8em;
-  padding: 10px 40px;
   border-radius: 25px;
   cursor: pointer;
+  margin: auto;
   
 }
 
+.discount-desktop {
+  display: inline-block;
+  font-weight: 800;
+  font-size: .8em;
+  background-color: hsl(14, 92%, 95%);
+  color: hsl(15, 100%, 70%);
+  outline: solid 1px hsl(15, 100%, 70%);
+  border-radius: 10px;
+  padding:2px;
+  margin-left: 5px;
+  height: auto;
+}
+
+.discount-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    margin: 10px;
+    padding: 25px 12px;
+  }
+
+  h1 {
+    font-size: 1.1em;
+  }
+
+  h2 {
+    font-size: .9em;
+  }
+
+  .container-head {
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -30px;
+  }
+
+  .pageviews {
+    order: 1;
+  }
+
+  .price {
+    padding-top: 25px;
+    order: 3;
+  }
+
+  .slider {
+    order: 2;
+  }
+
+  .discount-flag {
+    display: none;
+  }
+
+  .container-foot {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .discount-flag {
+    visibility: hidden;
+  }
+
+  ul {
+    text-align: center;
+  }
+  
+  button {
+    margin: 10px;
+  }
+
+  .discount-desktop {
+    display: none;
+  }
+  
+  .discount-mobile {
+    display: inline-block;
+    font-weight: 800;
+    font-size: .8em;
+    background-color: hsl(14, 92%, 95%);
+    color: hsl(15, 100%, 70%);
+    outline: solid 1px hsl(15, 100%, 70%);
+    border-radius: 10px;
+    margin-left: 2px;
+    height: auto;
+  }
+}
